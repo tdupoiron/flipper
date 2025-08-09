@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flipper - Jeu de Pinball</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="game-container">
+        <div class="header">
+            <h1>FLIPPER</h1>
+            <div class="controls-info">
+                <p>Joueur 1: Flèches ← → | Espace: Lancer</p>
+                <p>Joueur 2: A D | S: Lancer</p>
+                <p>R: Nouvelle partie | P: Pause</p>
+            </div>
+        </div>
+        
+        <div class="game-board">
+            <div class="score-panel">
+                <div class="player-score">
+                    <h3>Joueur 1</h3>
+                    <div class="score" id="score1">0</div>
+                    <div class="lives">Vies: <span id="lives1">3</span></div>
+                </div>
+                <div class="player-score">
+                    <h3>Joueur 2</h3>
+                    <div class="score" id="score2">0</div>
+                    <div class="lives">Vies: <span id="lives2">3</span></div>
+                </div>
+                <div class="current-player">
+                    Tour: <span id="currentPlayer">Joueur 1</span>
+                </div>
+            </div>
+            
+            <div class="flipper-table">
+                <canvas id="gameCanvas" width="600" height="800"></canvas>
+                
+                <!-- Contrôles visuels -->
+                <div class="game-controls">
+                    <button id="launchBtn" class="launch-btn">LANCER</button>
+                    <div class="flipper-controls">
+                        <button id="leftFlipperBtn" class="flipper-btn left">←</button>
+                        <button id="rightFlipperBtn" class="flipper-btn right">→</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="high-scores">
+            <h3>Meilleurs Scores</h3>
+            <div id="highScoresList"></div>
+            <button id="clearScores">Effacer les scores</button>
+        </div>
+    </div>
+    
+    <!-- Modal de fin de partie -->
+    <div id="gameOverModal" class="modal">
+        <div class="modal-content">
+            <h2>Fin de partie!</h2>
+            <p id="finalScores"></p>
+            <p id="winner"></p>
+            <button id="restartBtn">Nouvelle partie</button>
+        </div>
+    </div>
+    
+    <!-- Modal de pause -->
+    <div id="pauseModal" class="modal">
+        <div class="modal-content">
+            <h2>Jeu en pause</h2>
+            <p>Appuyez sur P pour reprendre</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
